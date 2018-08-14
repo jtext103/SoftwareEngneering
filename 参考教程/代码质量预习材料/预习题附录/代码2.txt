@@ -1,0 +1,83 @@
+//-------------------------File 1-------------------------//
+using System;
+
+namespace BirdsCheck
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Animal penguin = new Animal("penguin", true, true, true, true, false);
+            Animal eagle = new Animal("eagle", true, true, true, true, true);
+            Animal chicken = new Animal("chicken", true, true, true, true, false);
+
+            Bird.CheckIfAnimalIsBird(penguin);
+            Bird.CheckIfAnimalIsBird(eagle);
+            Bird.CheckIfAnimalIsBird(chicken);
+
+            Console.ReadKey(false);     //黑框显示出来后，输入一个字符才会关闭，便于查看输出结果
+        }
+    }
+}
+
+//-------------------------File 2-------------------------//
+namespace BirdsCheck
+{
+    /// <summary>
+    /// 定义一切动物的类
+    /// </summary>
+    public class Animal
+    {
+        public string Name;
+
+        public bool IsOviparity;
+        public bool IsHomothermal;
+        public bool HasWing;
+        public bool HasFeather;
+        public bool CanFly;
+
+        public Animal(){ }
+
+        /// <summary>
+        /// 给出动物属性的构造函数
+        /// </summary>
+        public Animal(string name, bool isOviparity, bool isHomothermal, bool hasWing, bool hasFeather, bool canFly)
+        {
+            Name = name;
+            IsOviparity = isOviparity;
+            IsHomothermal = isHomothermal;
+            HasWing = hasWing;
+            HasFeather = hasFeather;
+            CanFly = canFly;
+        }
+    }
+}
+
+//-------------------------File 3-------------------------//
+using System;
+
+namespace BirdsCheck
+{
+    /// <summary>
+    /// 定义所有鸟类的类
+    /// </summary>
+    public class Bird : Animal
+    {
+        /// <summary>
+        /// 检查一个动物是否是鸟类
+        /// </summary>
+        static public bool CheckIfAnimalIsBird(Animal animal)
+        {
+            if (animal.IsOviparity == true && animal.IsHomothermal == true && animal.HasWing == true && animal.HasFeather == true)
+            {
+                Console.WriteLine(animal.Name + " is bird");
+                return true;
+            }
+            else
+            {
+                Console.WriteLine(animal.Name + " is not bird");
+                return false;
+            }
+        }
+    }
+}
