@@ -1,0 +1,3 @@
+Client执行用户交互的所用功能
+Server实现和后台数据库的沟通
+两者通过TCP/IP协议，使用scoket建立连接

@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DllWithXML</name>
+    </assembly>
+    <members>
+        <member name="M:DllWithXML.Adder.Add(System.Int32,System.Int32)">
+            <summary>
+            将两个整型数相加，返回和
+            </summary>
+            <param name="a">加数a</param>
+            <param name="b">加数b</param>
+            <returns>和</returns>
+        </member>
+    </members>
+</doc>
